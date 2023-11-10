@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.animation.Data.HeroRepo
 import com.example.animation.Model.Hero
 import com.example.animation.ui.theme.SuperheroesTheme
 
@@ -43,11 +44,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     SuperheroesTheme {
-        HeroCard(hero = Hero(
-            nameRes = R.string.hero1,
-            descriptionRes = R.string.description1,
-            imageRes = R.drawable.android_superhero1
-            )
-        )
+      HeroList(list = HeroRepo.heroes)
+
     }
 }
