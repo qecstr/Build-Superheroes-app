@@ -13,6 +13,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 
@@ -84,11 +85,11 @@ fun HeroCard(hero: Hero, modifier: Modifier = Modifier){
 }
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun HeroList(list: List<Hero>,modifier: Modifier = Modifier) {
+fun HeroList(list: List<Hero>,modifier: Modifier = Modifier, contentPadding: PaddingValues = PaddingValues(0.dp)) {
     LazyColumn(
         modifier = modifier,
 
-
+        contentPadding = contentPadding
     ){
         items(list){hero ->
             HeroCard(hero = hero, modifier = modifier)
